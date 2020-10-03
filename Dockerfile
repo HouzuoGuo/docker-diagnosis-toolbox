@@ -12,5 +12,5 @@ RUN apt install -q -y -f -m -o Dpkg::Options::=--force-confold -o Dpkg::Options:
 # Remove unnecessary files
 RUN rm -rf /var/cache/apt/*
 
-# Entry point sleeps for an hour, so that the image can be launched as a service.
-ENTRYPOINT ["/bin/sh", "-c", "echo container has started, sleeping for 3600 seconds.; sleep 3600"]
+# Entry point is fish shell
+ENTRYPOINT ["/usr/bin/fish", "-l"]
